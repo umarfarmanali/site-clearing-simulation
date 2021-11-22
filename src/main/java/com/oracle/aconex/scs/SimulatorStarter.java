@@ -16,7 +16,7 @@ public final class SimulatorStarter {
 
     private final Simulator simulator;
     private Site site;
-    
+
     public SimulatorStarter(final Site site) {
         this.site = site;
         this.simulator = new Simulator(site);
@@ -64,9 +64,10 @@ public final class SimulatorStarter {
             sj.add("You have input an invalid command. Thanks for playing.");
         }
 
-        sj.add("These are the commands you issued:").add(history).add("Total fuel usage: " + fuelUsgae + " units.")
-                .add("Thank you for using the Aconex site clearing simulator.");
-
+        if (!history.isEmpty()) {
+            sj.add("These are the commands you issued:").add(history).add("Total fuel usage: " + fuelUsgae + " units.");
+        }
+        sj.add("Thank you for using the Aconex site clearing simulator.");
         return sj.toString();
     }
 
@@ -100,7 +101,7 @@ public final class SimulatorStarter {
 //        }
 //        return code;
 //    }
-    
+
     protected UserPrompter getUserPrompter() {
         return new UserPrompter(System.in);
     }
