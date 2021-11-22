@@ -71,37 +71,6 @@ public final class SimulatorStarter {
         return sj.toString();
     }
 
-//    private ReturnCode userPlay(final Simulator sim) {
-//        ReturnCode code = ReturnCode.OK;
-//        try (Scanner input = new Scanner(System.in)) {
-//
-//            do {
-//                LOG.info("l)eft, (r)ight, (a)dvance <n>, (q)uit: ");
-//
-//                final String command = input.nextLine();
-//                code = sim.move(command);
-//            } while (code == ReturnCode.OK);
-//        }
-//        return code;
-//    }
-
-//    private ReturnCode userPlay(final Simulator sim) {
-//        ReturnCode code = ReturnCode.OK;
-//
-//        final UserPrompter prompter = getUserPrompter();
-//        try {
-//            do {
-//                LOG.info("l)eft, (r)ight, (a)dvance <n>, (q)uit: ");
-//
-//                final String command = prompter.prompt();
-//                code = sim.move(command);
-//            } while (code == ReturnCode.OK);
-//        } finally {
-//            prompter.close();
-//        }
-//        return code;
-//    }
-
     protected UserPrompter getUserPrompter() {
         return new UserPrompter(System.in);
     }

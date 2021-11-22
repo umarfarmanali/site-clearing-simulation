@@ -39,8 +39,7 @@ public final class Simulator {
     public ReturnCode move(final String command) {
 
         if (!Command.isValid(command)) {
-//            throw new Exception("Invalid command: " + command);
-            LOG.debug("Invalid command: " + command);
+           LOG.debug("Invalid command: " + command);
             return INVALID_COMMAND;
         }
 
